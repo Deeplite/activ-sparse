@@ -1,0 +1,7 @@
+{% for array in arrays %}
+const uint8_t {{array.name}}[{{array.rows}}][{{array.cols}}] = {{ "{" }}
+  {% for x in array.value %}
+    {{ "{" }} {{x|join(', ')}} {{"}"}},
+  {% endfor %}
+  {{"}"}};
+{% endfor %}
